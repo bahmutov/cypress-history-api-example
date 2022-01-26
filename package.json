@@ -1,0 +1,31 @@
+{
+  "name": "cypress-history-api-example",
+  "version": "1.0.0",
+  "description": "Testing the application that uses browser History API",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "start": "serve -p 5500 public",
+    "cy:open": "cypress open",
+    "dev": "start-test 5500 cy:open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cypress-history-api-example.git"
+  },
+  "keywords": [
+    "cypress-example"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cypress-history-api-example/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cypress-history-api-example#readme",
+  "devDependencies": {
+    "cypress": "^9.3.1",
+    "prettier": "^2.5.1",
+    "serve": "^13.0.2",
+    "start-server-and-test": "^1.14.0"
+  }
+}
