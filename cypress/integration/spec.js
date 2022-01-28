@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import spok from 'cy-spok'
+
 describe('Kittens', () => {
   it('redirects to a cat at the start', () => {
     cy.visit('/')
@@ -33,6 +35,41 @@ describe('Kittens', () => {
         'Fluffy',
         '/history/fluffy',
       ])
+  })
+
+  it('spies on history.pushState using cy-spok', () => {
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        // spy on the "pushState" method
+        cy.spy(win.history, 'pushState').as('pushState')
+      },
+    })
+
+    cy.location('pathname').should('equal', '/history/fluffy')
+    // navigate to a different cat
+    cy.contains('a', 'Whiskers').click()
+    cy.contains('#content', 'Whiskers!')
+    // check the pushState calls
+    cy.get('@pushState')
+      .should('have.been.calledTwice')
+      .its('args')
+      .should(
+        spok([
+          // first call
+          [
+            { content: 'Fluffy!', photo: 'https://placekitten.com/200/200' },
+            'Fluffy',
+            '/history/fluffy',
+          ],
+          // second call
+          [
+            { content: 'Whiskers!', photo: 'https://placekitten.com/350/350' },
+            'Whiskers',
+            // we get the full URL here
+            Cypress.config('baseUrl') + '/history/whiskers',
+          ],
+        ]),
+      )
   })
 
   it('navigates using history methods', () => {

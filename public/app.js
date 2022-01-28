@@ -34,6 +34,7 @@ function goTo(cat, title, href) {
   updateContent(data)
 
   // Add an item to the history log
+  console.log('going to', cat, title, href)
   history.pushState(data, title, href)
 }
 

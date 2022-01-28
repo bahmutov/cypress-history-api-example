@@ -2,6 +2,8 @@
 
 > Testing the application that uses browser History API
 
+Read the blog post [Cypress History API Example](https://glebbahmutov.com/blog/cypress-history-api-example/)
+
 ![Application tests](./images/history.png)
 
 See the [spec.js](./cypress/integration/spec.js)
