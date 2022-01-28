@@ -1,4 +1,4 @@
-# cypress-history-api-example
+# cypress-history-api-example ![cypress version](https://img.shields.io/badge/cypress-9.3.1-brightgreen)
 
 > Testing the application that uses browser History API
 
