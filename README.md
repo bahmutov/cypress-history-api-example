@@ -1,4 +1,4 @@
-# cypress-history-api-example ![cypress version](https://img.shields.io/badge/cypress-9.3.1-brightgreen)
+# cypress-history-api-example [![ci](https://github.com/bahmutov/cypress-history-api-example/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/cypress-history-api-example/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-9.3.1-brightgreen)
 
 > Testing the application that uses browser History API
 
